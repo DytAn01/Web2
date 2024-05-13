@@ -53,3 +53,9 @@ function validateRePassword(passwordInputId, repasswordInputId, errorSpanId, err
         errorSpan2.style.display = 'none'; // Ẩn span nếu không có lỗi
     }
 }
+
+// const submitBtn = document.getElementById('submitBtn');
+// submitBtn.addEventListener('click', (e) => {
+//     e.preventDefault()
+
+// });

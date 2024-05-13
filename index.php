@@ -41,16 +41,15 @@
                         <li><a href="#">Theo dõi đơn hàng</a></li>
                         <?php
                         session_start(); // Bắt đầu hoặc tiếp tục session
-                        if(isset($_SESSION["login"]) && $_SESSION["login"] === true): ?>
+                        if(isset($_SESSION["username"]) && $_SESSION["login"] === true){ ?>
                             <!-- Nếu người dùng đã đăng nhập -->
                             <div class="accountlogged">
                                 Xin chào, <?php echo $_SESSION["username"]; ?> <!-- Hiển thị tên người dùng -->
                             </div>
-                        <?php else: ?>
+                        <?php } else { ?>
                             <!-- Nếu người dùng chưa đăng nhập -->
-                            <li><a href="signup.php">Đăng ký</a></li>
                             <li><a href="signin.php">Đăng nhập</a></li>
-                        <?php endif; ?>
+                        <?php } ?>
                         <i class="fa-solid fa-cart-shopping" onclick="xemGioHang()"></i>
                         <div class="cart-display">
                             <div>
@@ -68,7 +67,7 @@
                 </div>
 
 
-                <div class="search-bar">
+                <!-- <div class="search-bar">
                     <input type="search" id="search-box" n value="" placeholder="Nhập từ khóa" autocomplete="off">
                     <button class="search-button" type="submit" onclick="hehehe()">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -138,7 +137,7 @@
 
 
 
-                </div>
+                </div> -->
                 <script>
                     // Tìm kiếm sản phẩm -----------------------------------------------------------------
                     function timKiemSanPham() {

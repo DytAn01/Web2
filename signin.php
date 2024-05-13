@@ -7,10 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["pass"];
 
     // Tạo một đối tượng Database
-    $database = new Database();
+    // $database = new Database();
 
     // Lấy kết nối từ đối tượng Database
-    $conn = $database->getConnection();
+    // $conn = $database->getConnection();
 
     // Thực hiện xác thực đăng nhập
     $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
@@ -32,17 +32,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link rel="stylesheet" href="css/signin.css">
 <link rel="stylesheet" href="css/style.css">
 <div class="registration-form">        
-    <form action="account_process.php" method="post">
+    <form action="" method="post">
             <h1>Đăng nhập</h1>
+            <input type="hidden" id="action" value="login">
         <div class="login-group">
             <label for="tendangnhaptxt">Tên đăng nhập</label>
-            <input type="text" class="text-field" placeholder="Nhập tên đăng nhập" name="tendangnhap" required>
+            <input id="tendangnhap" type="text" class="text-field" placeholder="Nhập tên đăng nhập" name="tendangnhap" required>
         </div>
         <div class="login-group">
             <label for="passtxt">Mật khẩu</label>
-            <input type="password" class="text-field" placeholder="Nhập mật khẩu" name="pass" required>
+            <input id="pass" type="password" class="text-field" placeholder="Nhập mật khẩu" name="pass" required>
         </div>
-        <button type="submit" class="btn">Đăng nhập</button>
+        <button type="button" onclick="submitData()" class="btn">Đăng nhập</button>
         <div class="login-assist">
             <p>Bạn chưa có tài khoản? Hãy <a href="signup.php">Đăng kí ngay</a></p>
         </div>
@@ -50,5 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 </div>
 <?php
+include "script.php";
 include "footer.php";
 ?> 

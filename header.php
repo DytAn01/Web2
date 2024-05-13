@@ -7,7 +7,7 @@
                 <!---------------------------top menu------------------>
                 <div class="header-top-menu">
                     <ul>
-                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="index.php">Trang chủ</a></li>
                         <li><a href="#"> Lịch sử đơn hàng </a></li>
                         <li><a href="#"> Theo dõi đơn hàng </a></li>
                         <li><a href="signup.php" id='signUp-link'> Đăng kí </a></li>
