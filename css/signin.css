@@ -1,0 +1,61 @@
+.btn {
+    background-color: #4CAF50; /* Màu xanh lá đậm */
+    color: white; /* Màu chữ trắng */
+    padding: 10px 20px; /* Kích thước padding */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer; /* Con trỏ chuột khi di chuyển qua nút */
+    text-align: center; /* Căn giữa nội dung nút */
+    text-decoration: none; /* Không gạch chân cho văn bản */
+    display: inline-block; /* Hiển thị như block element */
+    font-size: 16px; /* Kích thước font chữ */
+    margin-top: 20px; /* Khoảng cách từ nút lên các ô nhập liệu */
+}
+
+/* CSS cho hover khi di chuột qua nút */
+.btn:hover {
+    background-color: #45a049; /* Màu xanh lá nhạt */
+}
+
+.registration-form {
+    position: relative;
+    width: 460px;
+    height: 600px;
+    /* background-color:antiquewhite; */
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: solid black; */
+    margin: auto;
+    margin: 120px auto;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login-group {
+    margin-bottom: 15px;
+}
+
+.login-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.text-field{
+    width: 100%;
+    padding: 10px;
+    border:1px solid #ccc;
+    border-radius: 3px;
+}
+.login-assist {
+    margin-top: 20px; /* Khoảng cách từ bottom của form đến phần đăng nhập */
+    text-align: center; /* Căn giữa nội dung trong phần đăng nhập */
+}
+
+.login-assist p {
+    margin-bottom: 0; /* Không cần khoảng cách ở bottom của phần đăng nhập */
+}
