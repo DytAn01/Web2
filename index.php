@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
     <script src="https://kit.fontawesome.com/367278d2a4.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <div class="header-contain">
         <div class="heading">
             <div class="header-logo">
-                <!-- <img src="images/logo.png" alt=""> -->
+                <img src="./images/logo/logo.png" alt="">
             </div>
             <div class="header-content">
                 <!---------------------------top menu------------------>
@@ -43,9 +43,10 @@
                         session_start(); // Bắt đầu hoặc tiếp tục session
                         if(isset($_SESSION["username"]) && $_SESSION["login"] === true){ ?>
                             <!-- Nếu người dùng đã đăng nhập -->
-                            <div class="accountlogged">
-                                Xin chào, <?php echo $_SESSION["username"]; ?> <!-- Hiển thị tên người dùng -->
-                            </div>
+                            <button class="Btndown">
+                            <i class="fa-regular fa-user"></i><?php echo $_SESSION["username"]; ?>
+                            <i class="fa-solid fa-angle-down"></i>  <!-- Hiển thị tên người dùng -->
+                            </button>
                         <?php } else { ?>
                             <!-- Nếu người dùng chưa đăng nhập -->
                             <li><a href="signin.php">Đăng nhập</a></li>
@@ -67,7 +68,7 @@
                 </div>
 
 
-                <!-- <div class="search-bar">
+                <div class="search-bar">
                     <input type="search" id="search-box" n value="" placeholder="Nhập từ khóa" autocomplete="off">
                     <button class="search-button" type="submit" onclick="hehehe()">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -137,7 +138,7 @@
 
 
 
-                </div> -->
+                </div> 
                 <script>
                     // Tìm kiếm sản phẩm -----------------------------------------------------------------
                     function timKiemSanPham() {

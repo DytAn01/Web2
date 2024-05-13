@@ -60,7 +60,7 @@ html {
 
 .header-logo {
     float: left;
-    width: 20%;
+    width: 16%;
     height: 100%;
 
 }
@@ -73,6 +73,7 @@ html {
 }
 
 .header-content {
+    position: relative;
     float: right;
     width: 100%;
     height: 100%;
@@ -81,7 +82,6 @@ html {
 }
 
 .header-top-menu ul {
-    height: 100%;
     width: 100%;
     align-items: center;
     display: grid;
@@ -90,7 +90,7 @@ html {
 
 .header-top-menu li {
     display: flex;
-    height: 100%;
+    height: 55px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -131,7 +131,7 @@ html {
     align-items: center;
 }
 
-.search-box {
+#search-box {
     width: 400px;
     height: 65%;
     border-radius: 1rem;
@@ -148,6 +148,73 @@ html {
     font-size: 20px;
     cursor: pointer;
 }
+.filter-search-button {
+    margin-left: 1rem;
+    width: 5rem;
+    height: 2rem;
+    cursor: pointer;
+
+}
+
+.filter-search-container {
+    position: absolute;
+    width: 750px;
+    height: 400px;
+    background-color: rgb(228, 226, 214);
+    margin-right: -400px;
+    margin-top: 450px;
+    border-radius: 0.5rem;
+    display: none;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    border: #494949 solid 2px;
+}
+
+.filter-search {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.filter-search button {
+    width: 6rem;
+    height: 2rem;
+    background-color: #494949;
+    color: aliceblue;
+    border: none;
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+
+}
+
+.filter-search label {
+    font-size: 24px;
+}
+
+.filter-search {
+    font-size: 17px;
+    font-family: 'Times New Roman';
+
+}
+
+.filter-search input {
+    margin-left: 1rem;
+}
+
+.filter-search select {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 0.1rem;
+}
+
+
+
+
 
 .slider {
     width: 90%;
@@ -201,21 +268,21 @@ html {
 }
 
 .show-product {
+    padding:24px;
+    margin: auto;
     width: 80%;
     height: 1370px;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-    border: black solid 1px;
+    
 }
 
-.list-product {
-    width: 94%;
-    height: 100%;
+#list-product {
+   
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1.8rem;
-    gap: 2.1rem;
+    padding: 2px;
+    gap: 45px;
 }
 
 .product-item {
