@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "pages/header.php";
 include_once "dbconnect.php";
 ?>
 <link rel="stylesheet" href="css/signin.css">
@@ -25,5 +25,5 @@ include_once "dbconnect.php";
 </div>
 <?php
 include "script.php";
-include "footer.php";
+include "pages/footer.php";
 ?> 

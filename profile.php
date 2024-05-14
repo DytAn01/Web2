@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "pages/header.php";
 session_start(); // Bắt đầu phiên làm việc
 
 // Include file dbconnect.php để kết nối đến cơ sở dữ liệu
@@ -98,5 +98,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Thay đổi thành công!'); location.reload();</script>";
     }
 }
-include "footer.php";
+include "pages/footer.php";
 ?>

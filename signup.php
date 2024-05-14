@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "pages/header.php";
 ?>
 <link rel="stylesheet" href="css/signup.css">
 <link rel="stylesheet" href="css/style2.css">
@@ -58,6 +58,6 @@ include "header.php";
 
 include "script.php";
 
-include "footer.php";
+include "pages/footer.php";
 
 ?>    
