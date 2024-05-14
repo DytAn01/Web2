@@ -1,0 +1,66 @@
+.panel-heading {
+    background-color: #007BFF; /* Màu nền */
+    color: white; /* Màu chữ */
+    padding: 10px 15px; /* Đệm xung quanh */
+    border-top-left-radius: 4px; /* Bo góc trên trái */
+    border-top-right-radius: 4px; /* Bo góc trên phải */
+    font-size: 18px; /* Cỡ chữ */
+    text-align: center; /* Căn giữa chữ */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Hiệu ứng bóng dưới */
+}
+
+.panel-body {
+    padding: 20px; /* Đệm xung quanh nội dung trong panel */
+    border: 1px solid #ccc; /* Viền xung quanh */
+    border-bottom-left-radius: 4px; /* Bo góc dưới trái */
+    border-bottom-right-radius: 4px; /* Bo góc dưới phải */
+    background-color: #fff; /* Màu nền */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Hiệu ứng bóng nhẹ */
+}
+
+.user-container {
+    width: 100%; /* Chiều rộng tối đa */
+    margin-top: 120px; /* Khoảng cách từ header */
+    padding: 20px; /* Đệm xung quanh nội dung */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Hiệu ứng bóng */
+    background: #fff; /* Màu nền */
+}
+
+.user-table {
+    width: 50%; /* Chiều rộng tối đa */
+    border-collapse: collapse; /* Xóa các đường kẻ giữa các ô */
+    margin:auto; /* Khoảng cách dưới bảng */
+}
+
+.user-table th, .user-table td {
+    border: 1px solid #ccc; /* Đường viền */
+    padding: 20px; /* Đệm */
+    text-align: left; /* Căn trái nội dung */
+}
+
+.user-table th {
+    background-color: #f8f8f8; /* Màu nền cho tiêu đề */
+}
+
+.form-control {
+    width: 100%; /* Chiều rộng tối đa */
+    padding: 10px; /* Đệm */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 4px; /* Bo góc */
+}
+
+.btn-info {
+    padding: 10px 20px; /* Đệm */
+    background-color: #007BFF; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none; /* Không viền */
+    border-radius: 4px; /* Bo góc */
+    cursor: pointer; /* Con trỏ khi di chuột */
+    display: inline-block; /* Hiển thị nút trên cùng một hàng */
+}
+input.btn-info{
+    margin: 20px 800px;
+}
+.btn-info:hover {
+    background-color: #0056b3; /* Màu khi hover */
+}

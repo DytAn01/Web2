@@ -2,7 +2,7 @@
 include "header.php";
 ?>
 <link rel="stylesheet" href="css/signup.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style2.css">
 <div class="registration-form">
         <form action="#" method="post">
                     <h1>Đăng kí</h1>
@@ -53,7 +53,7 @@ include "header.php";
         </form>
        
 </div>
-<script src="js/signupandsignin.js"></script>
+<script src="regex.js"></script>
 <?php
 
 include "script.php";

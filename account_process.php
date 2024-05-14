@@ -34,6 +34,10 @@ function signIn()
     if (mysqli_num_rows($user_result) > 0) {
       $row = mysqli_fetch_assoc($user_result);
 
+        if ($row['trangthai'] == 0) {
+            echo json_encode(array("message" => "Tài khoản của bạn hiện không thể đăng nhập"));
+            exit;
+        }
       // So sánh mật khẩu đã nhập với mật khẩu trong cơ sở dữ liệu
       if ($pass == $row['password']) {
         // Truy vấn để lấy vai trò của người dùng từ bảng roles
@@ -104,7 +108,7 @@ function signUp()
 
 
     // Thêm người dùng vào cơ sở dữ liệu
-    $sql_insert_user = "INSERT INTO users VALUES ('', '$pass', '$dienthoai', '$email', '$tendangnhap','$hoten', '$diachi', '4')";
+    $sql_insert_user = "INSERT INTO users VALUES ('', '$pass', '$dienthoai', '$email', '$tendangnhap','$hoten', '$diachi', '4','1')";
     mysqli_query($conn, $sql_insert_user);
     echo json_encode(array("message" => "Đăng ký thành công!"));
   } catch (Exception $e) {

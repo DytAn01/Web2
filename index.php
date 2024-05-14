@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
     <script src="https://kit.fontawesome.com/367278d2a4.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@
     <div class="header-contain">
         <div class="heading">
             <div class="header-logo">
-                <img src="./images/logo/logo.png" alt="">
+              <a href="index.php"><img src="./images/logo/logo.png" alt=""></a>
             </div>
             <div class="header-content">
                 <!---------------------------top menu------------------>
@@ -43,10 +43,17 @@
                         session_start(); // Bắt đầu hoặc tiếp tục session
                         if(isset($_SESSION["username"]) && $_SESSION["login"] === true){ ?>
                             <!-- Nếu người dùng đã đăng nhập -->
-                            <button class="Btndown">
-                            <i class="fa-regular fa-user"></i><?php echo $_SESSION["username"]; ?>
-                            <i class="fa-solid fa-angle-down"></i>  <!-- Hiển thị tên người dùng -->
+                          <div class="dropdown">
+                            <button class="btn-dropdown">
+                                <i class="fa-regular fa-user"></i>
+                                <?php echo $_SESSION["username"]; ?>
+                                <i class="fa-solid fa-angle-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <a href="profile.php">Thông tin cá nhân</a>
+                                <a href="logout.php">Đăng xuất</a>
+                            </div>
+                            </div>
                         <?php } else { ?>
                             <!-- Nếu người dùng chưa đăng nhập -->
                             <li><a href="signin.php">Đăng nhập</a></li>

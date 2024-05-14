@@ -383,4 +383,144 @@ html {
     justify-content: center;
     align-items: center;
 }
-/********************************LOGIN AND REGISTER ****************************************************************/
+/********************************Cart ****************************************************************/
+
+.cart-display {
+    width: 600px;
+    height: 550px;
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    border-radius: 0.5rem;
+    display: none;
+    flex-direction: column;
+    z-index: 3;
+    border: #202020 solid 2px;
+    align-items: center;
+    font-family: 'Times New Roman';
+}
+
+.close-cart {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+    display: flex;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.list-product-in-cart {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: rgb(165, 165, 165);
+    width: 97%;
+    height: 70%;
+    align-items: center;
+    border: #909090 solid 0.5px;
+}
+
+.item-in-cart-container {
+    width: 96%;
+    height: 130px;
+    display: flex;
+    background-color: rgb(237, 237, 237);
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.item-in-cart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.item-in-cart img {
+    height: 95%;
+    display: flex;
+}
+
+
+.item-in-cart div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-product {
+    margin-left: -1rem;
+    margin-right: 1rem;
+}
+
+.item-in-cart-info {
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.item-in-cart-name {
+    height: 50%;
+    font-size: 19px;
+}
+
+.item-quantity-bar {
+    display: flex;
+    width: 100px;
+    height: 50px;
+    margin-left: 1.5rem;
+}
+
+.item-quantity-bar button {
+    height: 1.8rem;
+    width: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.decrease i,
+.increase i {
+    margin-left: -0.1rem;
+    font-size: 12px;
+}
+
+
+.selected-product-num {
+    width: 1.8rem;
+    height: 1.7rem;
+    display: flex;
+    justify-content: center;
+    border: #4c4c4c solid 1px;
+}
+
+.item-in-cart-price {
+    margin-left: 1rem;
+    font-size: 20px;
+}
+
+.select-item-in-cart {
+    margin-left: 1.5rem;
+}
+
+.select-item-in-cart input {
+    width: 1.1rem;
+    height: 1.1rem;
+    cursor: pointer;
+}
+
+.pay-button button {
+    width: 200px;
+    height: 3rem;
+    border: none;
+    background-color: rgb(214, 214, 214);
+    cursor: pointer;
+}
+
+
+

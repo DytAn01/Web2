@@ -1,36 +1,9 @@
 <?php
 include "header.php";
 include_once "dbconnect.php";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Lấy thông tin đăng nhập từ form
-    $username = $_POST["tendangnhap"];
-    $password = $_POST["pass"];
-
-    // Tạo một đối tượng Database
-    // $database = new Database();
-
-    // Lấy kết nối từ đối tượng Database
-    // $conn = $database->getConnection();
-
-    // Thực hiện xác thực đăng nhập
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) == 1) {
-        // Đăng nhập thành công
-        session_start();
-        $_SESSION["loggedin"] = true;
-        $_SESSION["username"] = $username;
-        header("location: index.php"); // Chuyển hướng đến trang user.php
-        exit; // Kết thúc kịch bản
-    } else {
-        // Đăng nhập không thành công
-        $login_error = "Tên đăng nhập hoặc mật khẩu không đúng.";
-    }
-}
 ?>
 <link rel="stylesheet" href="css/signin.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style2.css">
 <div class="registration-form">        
     <form action="" method="post">
             <h1>Đăng nhập</h1>
