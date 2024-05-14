@@ -1,11 +1,13 @@
 <?php
+session_start();
 include "dbconnect.php";
 
 if ($conn) {
     $data = json_decode(file_get_contents("php://input"), true);
     if (isset($data['selectedProduct'])) {
-        $ngayxuatHD = date("d-m-Y  H:i");
-        $sql = "INSERT INTO hoadon(thanhtien, ngayxuatHD) VALUES (0, '$ngayxuatHD')";
+        $ngayxuatHD = date("Y-m-d");
+        $maKH = $_SESSION['userID'];
+        $sql = "INSERT INTO hoadon(thanhtien, ngayxuatHD, mataikhoan) VALUES (0, '$ngayxuatHD', '$maKH')";
         if ($conn->query($sql) === TRUE) {
             $maHD = $conn->insert_id;
             $thanhtien = 0;
@@ -29,7 +31,7 @@ if ($conn) {
         $conn->query($sql);
     }
     mysqli_close($conn);
-    
+
 } else {
     echo "Lỗi kết nối đến cơ sở dữ liệu.";
 }

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://kit.fontawesome.com/367278d2a4.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -30,29 +30,29 @@
     <div class="header-contain">
         <div class="heading">
             <div class="header-logo">
-              <a href="index.php"><img src="./images/logo/logo.png" alt=""></a>
+                <a href="index.php"><img src="./images/logo/logo.png" alt=""></a>
             </div>
             <div class="header-content">
                 <!---------------------------top menu------------------>
                 <div class="header-top-menu">
                     <ul>
-                        <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Lịch sử đơn hàng</a></li>
-                        <li><a href="#">Theo dõi đơn hàng</a></li>
+                        <li><a href="index.php">Trang chủ</a></li>
+                        <li><a href="pages/lichsudonhang.php">Lịch sử đơn hàng</a></li>
+                        <!-- <li><a href="pages/theodoidonhang.php">Theo dõi đơn hàng</a></li> -->
                         <?php
                         session_start(); // Bắt đầu hoặc tiếp tục session
-                        if(isset($_SESSION["username"]) && $_SESSION["login"] === true){ ?>
+                        if (isset($_SESSION["username"]) && $_SESSION["login"] === true) { ?>
                             <!-- Nếu người dùng đã đăng nhập -->
-                          <div class="dropdown">
-                            <button class="btn-dropdown">
-                                <i class="fa-regular fa-user"></i>
-                                <?php echo $_SESSION["username"]; ?>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="profile.php">Thông tin cá nhân</a>
-                                <a href="logout.php">Đăng xuất</a>
-                            </div>
+                            <div class="dropdown">
+                                <button class="btn-dropdown">
+                                    <i class="fa-regular fa-user"></i>
+                                    <?php echo $_SESSION["username"]; ?>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="profile.php">Thông tin cá nhân</a>
+                                    <a href="logout.php">Đăng xuất</a>
+                                </div>
                             </div>
                         <?php } else { ?>
                             <!-- Nếu người dùng chưa đăng nhập -->
@@ -67,9 +67,19 @@
                                 </div>
                             </div>
                             <div class="list-product-in-cart"></div>
-                            <div class="pay-button" id="pay-button" onclick="thanhToanGioHang()">
+                            <?php
+                                if(isset($_SESSION['userID']))
+                                    $userID = $_SESSION['userID'];
+                                else
+                                $userID = '';
+                                    // Lấy giá trị của $_SESSION['userID'] vào biến JavaScript
+                                    echo "<script>var userID = " . json_encode($userID) . ";</script>";
+                                    ?>
+                            <div class="pay-button" id="pay-button" onclick="thanhToanGioHang(userID)">
                                 <button>Thanh toán giỏ hàng</button>
                             </div>
+
+
                         </div>
                     </ul>
                 </div>
@@ -145,7 +155,7 @@
 
 
 
-                </div> 
+                </div>
                 <script>
                     // Tìm kiếm sản phẩm -----------------------------------------------------------------
                     function timKiemSanPham() {
@@ -735,41 +745,53 @@
                 console.log(listProductIncart);
             }
 
-            function thanhToanGioHang() {
-                var selectedIndex = []; // mảng chứa index đã được chọn trong list product in cart
-                var selectedProduct = []; // mảng chứa id, count sản phẩm đã bấm thanh toán
-                var selectedProductInCart = document.querySelectorAll('input[type="checkbox"].select-to-pay:checked');
-                selectedProductInCart.forEach(function(checkbox) {
-                    selectedIndex.push(parseInt((checkbox.id).substring(3)));
-                });
-                console.log('list index đã chọn ra từ mảng sp trong giỏ: ');
-                selectedIndex.sort((a, b) => b - a);
-                console.log(selectedIndex);
-                selectedIndex.forEach(i => {
-                    selectedProduct.push(listProductIncart[i]);
-                    listProductIncart.splice(i, 1);
-                });
-                capNhatGioHang('', '');
-                console.log('list sản phẩm trong giỏ hiện tại: ');
-                console.log(listProductIncart);
-                console.log('list id sản phẩm đã bấm thanh toán: ');
-                console.log(selectedProduct);
+            function thanhToanGioHang(userID) {
+                if (userID == '') {
+                    alert('Phải đăng nhập mới được mua hàng!')
+                } else {
+                    var selectedIndex = []; // mảng chứa index đã được chọn trong list product in cart
+                    var selectedProduct = []; // mảng chứa id, count sản phẩm đã bấm thanh toán
+                    var selectedProductInCart = document.querySelectorAll('input[type="checkbox"].select-to-pay:checked');
+                    selectedProductInCart.forEach(function(checkbox) {
+                        selectedIndex.push(parseInt((checkbox.id).substring(3)));
+                    });
+                    console.log('list index đã chọn ra từ mảng sp trong giỏ: ');
+                    selectedIndex.sort((a, b) => b - a);
+                    console.log(selectedIndex);
+                    selectedIndex.forEach(i => {
+                        selectedProduct.push(listProductIncart[i]);
+                        listProductIncart.splice(i, 1);
+                    });
+                    capNhatGioHang('', '');
+                    console.log('list sản phẩm trong giỏ hiện tại: ');
+                    console.log(listProductIncart);
+                    console.log('list id sản phẩm đã bấm thanh toán: ');
+                    console.log(selectedProduct);
 
-                // Xử lí bấm nút thanh toán ------------------------------------------
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "xulibamthanhtoan.php", true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                var data = JSON.stringify({
-                    selectedProduct: selectedProduct
-                });
-                xhr.send(data);
+                    // Xử lí bấm nút thanh toán ------------------------------------------
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "xulibamthanhtoan.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    var data = JSON.stringify({
+                        selectedProduct: selectedProduct
+                    });
+                    xhr.send(data);
+                }
             }
         </script>
+
+
+
 
     </section>
 
     <footer class="footer">
         <div class="footer-box1">
+
+            <div class="order-processing">
+                <button class="approve" id="43" onclick="xuLiDonHang(this)"> Duyệt đơn </button>
+                <button class="cancel" id="44" onclick="xuLiDonHang(this)"> Hủy đơn </button>
+            </div>
             <ul class="footer-item">
                 <li> Lorem ipsum dolor sit amet </li>
                 <li> Lorem ipsum dolor sit amet </li>

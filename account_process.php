@@ -1,7 +1,6 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
+session_start();
+
 require 'dbconnect.php';
 // IF
 if (isset($_POST["action"])) {
@@ -108,7 +107,7 @@ function signUp()
 
 
     // Thêm người dùng vào cơ sở dữ liệu
-    $sql_insert_user = "INSERT INTO users VALUES ('', '$pass', '$dienthoai', '$email', '$tendangnhap','$hoten', '$diachi', '4','1')";
+    $sql_insert_user = "INSERT INTO users VALUES ('', '$pass', '$dienthoai', '$email', '$tendangnhap','$hoten', '$diachi', '3','1')";
     mysqli_query($conn, $sql_insert_user);
     echo json_encode(array("message" => "Đăng ký thành công!"));
   } catch (Exception $e) {

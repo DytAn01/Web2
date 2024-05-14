@@ -1,17 +1,17 @@
 <?php
 include "dbconnect.php";
-
-if ($conn) {
-    $sql = "SELECT * FROM hoadon,";
-    $result = $conn->query($sql);
-    $data = array();
-    if ($result && $result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-        }
+    if ($conn) {
+    $data = json_decode(file_get_contents("php://input"), true);
+    if (isset($data['xuLi']) && isset($data['maHD'])) {
+        $xuLi = $data['xuLi'];
+        $maHD = $data['maHD'];
+        $sql_xuLiDonHang = "UPDATE hoadon SET trangthai = $xuLi WHERE maHD = $maHD";
+        $conn->query($sql_xuLiDonHang);
     }
-    echo json_encode($data);
-} else {
-    echo "Lỗi kết nối đến cơ sở dữ liệu.";
+    mysqli_close($conn);
+}
+ 
+else {
+    echo "error";
 }
 ?>

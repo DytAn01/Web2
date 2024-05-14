@@ -1,36 +1,76 @@
+function RegexData() {
+    // Lấy các giá trị từ form
+    var hoten = document.getElementById("hoten").value;
+    var dienthoai = document.getElementById("dienthoai").value;
+    var diachi = document.getElementById("diachi").value;
+    var email = document.getElementById("email").value;
+    var tendangnhap = document.getElementById("tendangnhap").value;
+    var pass = document.getElementById("pass").value;
+    var repass = document.getElementById("repass").value;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Lấy thẻ input và span error
-        var hotenInput = document.getElementById('hoten');
-        var hotenError = document.getElementById('hotenerrortxt');
+    // Biểu thức chính quy
+    var usernamePattern = /^[a-zA-Z0-9]+$/;
+    var passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var phonePattern = /^[0-9]{10}$/; // Số điện thoại phải có 10 hoặc 11 chữ số
+    var namePattern = /^.{3,50}$/; // Tên phải có từ 3 đến 50 ký tự
 
-        // Thêm sự kiện blur cho input
-        hotenInput.addEventListener('blur', function() {
-            validateHoten(); // Gọi hàm validateHoten khi input mất focus
-        });
+    // Kiểm tra tên
+    if (!namePattern.test(hoten)) {
+        document.getElementById("hotenerrortxt").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("hotenerrortxt").style.display = "none";
+    }
 
-        // Lấy các ô input khác
-        var otherInputs = document.querySelectorAll('.login-group input:not(#hoten)');
+    // Kiểm tra số điện thoại
+    if (!phonePattern.test(dienthoai)) {
+        document.getElementById("dienthoaierrortxt").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("dienthoaierrortxt").style.display = "none";
+    }
 
-        // Thêm sự kiện input cho các ô input khác
-        otherInputs.forEach(function(input) {
-            input.addEventListener('input', function() {
-                validateHoten(); // Gọi hàm validateHoten khi nhập vào ô khác
-            });
-        });
+    // Kiểm tra địa chỉ
+    if (diachi.length < 3) {
+        document.getElementById("diachierrortxt").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("diachierrortxt").style.display = "none";
+    }
 
-        // Hàm kiểm tra định dạng tên người dùng và hiển thị thông báo lỗi
-        function validateHoten() {
-            // Kiểm tra định dạng tên người dùng
-            var hotenPattern = /^[a-zA-Z\s]{3,50}$/; // Chỉ chấp nhận các ký tự chữ và khoảng trắng, từ 3 đến 50 ký tự
-            var hotenValue = hotenInput.value.trim(); // Lấy giá trị và loại bỏ khoảng trắng ở đầu và cuối
-            if (!hotenPattern.test(hotenValue)) {
-                // Nếu định dạng không hợp lệ, hiển thị thông báo lỗi
-                hotenError.style.display = 'block';
-            } else {
-                // Nếu định dạng hợp lệ, ẩn thông báo lỗi
-                hotenError.style.display = 'none';
-            }
-        }
-    });
+    // Kiểm tra email
+    if (!emailPattern.test(email)) {
+        document.getElementById("emailerrortxt").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("emailerrortxt").style.display = "none";
+    }
 
+    // Kiểm tra tên đăng nhập
+    if (!usernamePattern.test(tendangnhap)) {
+        document.getElementById("usernameerrortxt").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("usernameerrortxt").style.display = "none";
+    }
+
+    // Kiểm tra mật khẩu
+    if (!passwordPattern.test(pass)) {
+        document.getElementById("passerrortxt").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("passerrortxt").style.display = "none";
+    }
+
+    // Kiểm tra mật khẩu nhập lại
+    if (pass !== repass) {
+        document.getElementById("repasserrortxt").style.display = "block";
+        return false;
+    } else {
+        document.getElementById("repasserrortxt").style.display = "none";
+    }
+
+    // Nếu tất cả đều hợp lệ, gửi biểu mẫu
+    document.getElementById("registerForm").submit();
+}

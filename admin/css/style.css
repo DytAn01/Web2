@@ -1,0 +1,165 @@
+* {
+    box-sizing: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 18%;
+    /* Độ rộng của sidebar */
+    background-color: #f0f0f0;
+}
+
+.content {
+    flex-grow: 1;
+    /* Phần còn lại của không gian trống */
+    padding: 20px;
+}
+
+
+/* CSS cho sidebar */
+.boxcenter {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 8px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #cec7c7;
+}
+
+/* ----------------------------------- css trang add ------------------*/
+
+.content {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"],
+input[type="button"] {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* ----------------------------------------- css danhsach*/
+/*  phân trang */
+.page-number {
+    color: blue;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.current-page {
+    color: red;
+}
+
+.danhsach-container {
+    width: 70%;
+}
+
+.title {
+    padding-bottom: 20px;
+}
+
+/* CSS cho bảng */
+
+/* .table-container {
+    width: 100%;
+} */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table,
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+}
+
+.data-table th,
+.data-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+
+/* CSS cho các nút và input */
+.input-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.input-button:hover {
+    background-color: #0056b3;
+}
+
+/* CSS cho phần cuối của bảng */
+.table-footer {
+    margin-top: 20px;
+}
+
+/* CSS cho các nút trong phần cuối */
+.table-footer .input-button {
+    margin-right: 10px;
+}

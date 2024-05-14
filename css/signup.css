@@ -62,3 +62,9 @@ h1 {
 .login-assist p {
     margin-bottom: 0; /* Không cần khoảng cách ở bottom của phần đăng nhập */
 }
+.text-danger {
+    display: none;
+    color: red;
+    float: right;
+    margin-bottom: 20px;
+}

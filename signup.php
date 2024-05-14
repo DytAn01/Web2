@@ -37,14 +37,14 @@ include "pages/header.php";
                 <div class="login-group">
                     <label for="passtxt">Mật khẩu</label>
                     <input id="pass" type="password" class="text-field" placeholder="Nhập mật khẩu" name="pass" required>
-                    <span id="passerrortxt" class="text-danger" style="color: red; float: right; margin-bottom: 20px; display: none;">Mật khẩu không được có khoảng cách</span>
+                    <span id="passerrortxt" class="text-danger" style="color: red; float: right; margin-bottom: 20px; display: none;">Mật khẩu tối thiểu 8 kí tự</span>
                 </div>
                 <div class="login-group">
                     <label for="repasstxt">Nhập lại mật khẩu</label>
                     <input id="repass" type="password" class="text-field" placeholder="Nhập lại mật khẩu" name="repass" required>
-                    <span id="passerrortxt" class="text-danger" style="color: red; float: right; margin-bottom: 20px; display: none;">Mật khẩu không khớp</span>
+                    <span id="repasserrortxt" class="text-danger" style="color: red; float: right; margin-bottom: 20px; display: none;">Mật khẩu không khớp</span>
                 </div>
-                <button onclick="submitData()" type="button" class="btn">Đăng kí</button>
+                <button onclick="submitData();" type="button" class="btn">Đăng kí</button>
                 <div class="login-assist">
                     <p>Bạn đã có tài khoản? <a href="signin.php">Đăng nhập</a></p>
                     
@@ -53,7 +53,6 @@ include "pages/header.php";
         </form>
        
 </div>
-<script src="regex.js"></script>
 <?php
 
 include "script.php";

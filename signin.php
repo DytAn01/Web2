@@ -24,6 +24,6 @@ include_once "dbconnect.php";
 </form>
 </div>
 <?php
-include "script.php";
+include "script2.php";
 include "pages/footer.php";
 ?> 

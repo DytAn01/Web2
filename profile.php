@@ -1,5 +1,4 @@
 <?php
-include "pages/header.php";
 session_start(); // Bắt đầu phiên làm việc
 
 // Include file dbconnect.php để kết nối đến cơ sở dữ liệu
@@ -43,6 +42,7 @@ if(isset($_SESSION['userID'])) {
                     <span>Thông tin người dùng</span>
                 </div>
                 <div class="panel-body">
+                    <form action="" method="post">
                     <table class="user-table">
                         <tr>
                             <th>Họ và tên</th>
@@ -66,6 +66,7 @@ if(isset($_SESSION['userID'])) {
                             <input type="submit" name="" value="Lưu thay đổi" class="btn-info">
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
