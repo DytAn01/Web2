@@ -29,7 +29,6 @@ html {
 
 .header-logo {
     float: left;
-    width: 20%;
     height: 100%;
 
 }
@@ -74,6 +73,7 @@ html {
 }
 
 .header-top-menu a {
+    padding: 10px 80px;
     color: black;
     text-decoration: none;
 }

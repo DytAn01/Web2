@@ -21,7 +21,7 @@
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
                             <div class="dropdown-content">
-                                <a href="profile.php">Thông tin cá nhân</a>
+                                <a href="../profile.php">Thông tin cá nhân</a>
                                 <a href="../logout.php">Đăng xuất</a>
                             </div>
                             </div>
