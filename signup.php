@@ -55,7 +55,7 @@ include "pages/header.php";
 </div>
 <?php
 
-include "script.php";
+include "signupscript.php";
 
 include "pages/footer.php";
 
